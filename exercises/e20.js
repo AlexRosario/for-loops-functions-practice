@@ -7,7 +7,29 @@
 
 export function separateNamesWithAFromRest(array) {
   // Your code goes here...
+let aNames = [];
+let noaNames = [];
+let  separateNamesWithAFromRest = [];
 
+
+for( let i = 0; i < array.length; i++) {
+  
+  let noATrigger = 0;
+  for(let m = 0; m < array[i].length; m++){
+    
+    if( array[i][m] === "a"||array[i][m] === "A"){
+      aNames.push(array[i]);
+      break;
+    } else { noATrigger++; }
+
+    if(noATrigger === array[i].length ){
+      noaNames.push(array[i]); 
+    }
+  }
+}
+separateNamesWithAFromRest.push(aNames);
+separateNamesWithAFromRest.push(noaNames);
+return separateNamesWithAFromRest;
 }
 
 
